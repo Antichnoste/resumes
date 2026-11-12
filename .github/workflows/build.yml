@@ -1,0 +1,28 @@
+name: Build resumes
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-lang-cyrillic texlive-fonts-recommended texlive-fonts-extra
+      - name: Build PDFs
+        run: ./scripts/build.sh
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: resumes
+          path: docs/*.pdf
+          if-no-files-found: error
+          retention-days: 30

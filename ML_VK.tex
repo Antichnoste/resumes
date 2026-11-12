@@ -1,0 +1,95 @@
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.4in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+% Приглушённый цвет ссылок вместо стандартного насыщенного синего
+\definecolor{linkcolor}{RGB}{0, 0, 0}
+\hypersetup{colorlinks=true, urlcolor=linkcolor, linkcolor=linkcolor}
+
+\name{Караганов Павел}
+\address{Machine Learning}
+\address{
+    \href{mailto:karaganovpavel119@yandex.ru}{karaganovpavel119@yandex.ru} \hspace{2ex}
+    \href{https://t.me/Antichnoste}{@Antichnoste} \hspace{2ex}
+    \href{https://github.com/Antichnoste}{github.com/Antichnoste}
+}
+
+\begin{document}
+
+\begin{rSection}{О себе}
+Студент 3 курса ИТМО. Реализовывал классические ML-алгоритмы с нуля, обучал нейросети на PyTorch и разрабатывал backend на Java. Интересуюсь рекомендательными системами и применением машинного обучения в продуктах.
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Образование}
+{\bf Программная Инженерия}, бакалавриат ИТМО (Факультет ПИиКТ) \hfill {2024 - 2028}
+\begin{itemize}
+    \itemsep -3pt {} 
+    \item Поступил без вступительных испытаний (БВИ) по результатам перечневых олимпиад.
+    \item Профильные дисциплины: Алгоритмы и структуры данных, Математический анализ, Линейная алгебра.
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% TECHINICAL STRENGTHS	
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Технологии}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{4ex}} l }
+ML/DL: & scikit-learn, LightGBM, PyTorch, NumPy, pandas \\
+Визуализация: & Matplotlib, Seaborn \\
+Языки: & Python, Java (Core, Collections, Multithreading, Stream API), C++, SQL \\
+Инструменты и ОС: & Jupyter Notebook, Git, Linux, Bash, Docker \\
+Иностранный язык: & Английский — B2
+\end{tabular}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	ACHIEVEMENTS SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Олимпиады и Достижения}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item \textbf{Спортивное программирование:} Призёр перечневых олимпиад, участник регионального этапа ВсОШ.
+    \item \textbf{Шахматы:} 1-й взрослый разряд (рейтинг РШФ 2000).
+\end{itemize}
+\end{rSection} 
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE / PROJECTS SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Проекты}
+
+\item \textbf{\href{https://github.com/Antichnoste/ml-from-scratch-to-pytorch}{ML from Scratch to PyTorch}} \hfill \textit{NumPy, PyTorch, scikit-learn}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Реализовал градиентный спуск, линейную и логистическую регрессию с нуля на NumPy; сравнил со \textbf{sklearn} — расхождение MSE $\sim$0.4\%, ROC-AUC отличается в третьем знаке после запятой.
+    \item Спроектировал и обучил \textbf{CNN} на PyTorch для классификации Fashion-MNIST, достиг \textbf{91.99\%} accuracy на test set.
+    \item Провёл анализ ошибок модели по confusion matrix: выявил кластер визуально похожих классов (Shirt/\allowbreak T-shirt/\allowbreak Pullover/\allowbreak Coat) как основной источник ошибок.
+\end{itemize}
+
+\item \textbf{\href{https://github.com/Antichnoste/store-sales-forecasting}{Store Sales Forecasting}} \hfill \textit{LightGBM, pandas, временные ряды}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Построил direct multi-horizon пайплайн прогнозирования продаж для \textbf{3\,000\,888 наблюдений}, 54 магазинов, 33 товарных категорий и горизонта 16 дней.
+    \item Реализовал \textbf{3-fold walk-forward CV без утечки данных} — лаги строил относительно момента начала каждого 16-дневного прогноза; добавил признаки промоакций, календаря, праздников, магазинов и цен на нефть.
+    \item Обучил глобальный и 33 специализированных по товарным категориям \textbf{LightGBM}; OOF-блендинг снизил Kaggle RMSLE с \textbf{1.13406 до 0.42880} (\textminus 62\%).
+\end{itemize}
+
+\item \textbf{Клиент-серверное веб-приложение} \hfill \textit{Java, Spring Boot, PostgreSQL, Docker}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Спроектировал REST API, настроил авторизацию через Spring Security (JWT), интеграцию с PostgreSQL и запуск инфраструктуры в Docker Compose.
+\end{itemize}
+
+\end{rSection} 
+
+\end{document}
