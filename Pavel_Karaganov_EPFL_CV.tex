@@ -1,0 +1,78 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,top=17mm,bottom=17mm,left=19mm,right=19mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[scaled=0.98]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{needspace}
+\pagestyle{empty}
+\definecolor{accent}{HTML}{19497E}
+\definecolor{ink}{HTML}{1B2430}
+\definecolor{muted}{HTML}{526273}
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent,pdfauthor={Pavel Karaganov},pdftitle={Pavel Karaganov - Academic CV, Summer@EPFL 2027}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=4.5mm,itemsep=2.0pt,topsep=3pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\normalsize\bfseries\color{accent}}{}{0pt}{}[\color{accent!50}\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{5pt}
+\newcommand{\project}[3]{%
+  \noindent\textbf{\href{#2}{#1}}\hfill{\small\color{muted}#3}\par\vspace{-4pt}%
+}
+\newcommand{\skill}[2]{\textbf{#1}\hspace{4pt}#2\par\vspace{2pt}}
+\begin{document}
+\color{ink}
+\begin{center}
+{\LARGE\bfseries PAVEL KARAGANOV}\\[4pt]
+{\small St. Petersburg, Russia \quad $\vert$ \quad
+\href{mailto:karaganovpavel119@yandex.ru}{karaganovpavel119@yandex.ru} \quad $\vert$ \quad
+\href{https://github.com/Antichnoste}{github.com/Antichnoste}}
+\end{center}
+\vspace{-3pt}
+
+\section*{EDUCATION}
+\begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{0.31\linewidth}@{}}
+\textbf{ITMO University} --- BSc in Software Engineering & \textit{2024--2028 (expected)}\\
+\end{tabularx}
+\begin{itemize}
+  \item Estimated cumulative GPA: \textbf{4.37/5.00} (unofficial; pending transcript verification).
+  \item Admitted without entrance examinations based on academic olympiad results.
+  \item Relevant coursework: Data Structures and Algorithms, Calculus, Linear Algebra.
+\end{itemize}
+
+\section*{RESEARCH INTERESTS}
+Machine Learning; Recommendation Systems; Information Retrieval and Learning to Rank; Algorithms and Optimization.
+
+\section*{SELECTED MACHINE LEARNING PROJECTS}
+\project{Store Sales Forecasting}{https://github.com/Antichnoste/store-sales-forecasting}{LightGBM, pandas, time series}
+\begin{itemize}
+  \item Built a 16-day retail sales forecaster using approximately \textbf{3 million records} from \textbf{54 stores} and \textbf{33 product families}.
+  \item Designed leakage-safe \textbf{three-fold walk-forward validation}; engineered lag, rolling-window, promotion, calendar, holiday, and oil-price features.
+  \item Compared global and family-specific LightGBM models; explored recency weighting and out-of-fold blending, improving Kaggle public leaderboard RMSLE from \textbf{1.13406 to 0.42880}.
+\end{itemize}
+\vspace{4pt}
+\project{ML from Scratch to PyTorch}{https://github.com/Antichnoste/ml-from-scratch-to-pytorch}{NumPy, PyTorch, scikit-learn}
+\begin{itemize}
+  \item Implemented gradient descent, linear regression, and logistic regression from scratch in NumPy; validated the implementations against scikit-learn.
+  \item Built and trained a convolutional neural network for Fashion-MNIST classification, achieving \textbf{91.99\% test accuracy}.
+  \item Analyzed errors using a confusion matrix to identify confusion among visually similar clothing classes.
+\end{itemize}
+
+\section*{TECHNICAL SKILLS}
+\skill{Programming:}{Python, C++, SQL}
+\skill{Machine Learning:}{NumPy, pandas, scikit-learn, LightGBM, PyTorch}
+\skill{Tools:}{Git, Linux, Bash, Docker, CMake}
+\skill{English:}{B2 (ITMO University coursework)}
+
+\section*{ACADEMIC OLYMPIADS}
+\textbf{2024:} University Olympiad for School Students ``Belchonok'' (Informatics); ITMO Open Olympiad for School Students (Mathematics); Joint Interuniversity Mathematics Olympiad (OMMO).
+
+\end{document}
